@@ -12,6 +12,7 @@ it.describe('FORM DEMO TESTING', () => {
 
         await page.selectOption('select[name="country"]', {label: 'United States'});
 
+        await page.getByPlaceholder('Address 1').fill('LA');
         
     });
 });
