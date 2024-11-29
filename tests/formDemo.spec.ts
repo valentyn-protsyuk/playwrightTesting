@@ -8,6 +8,8 @@ it.describe('FORM DEMO TESTING', () => {
 
         await page.locator('input[placeholder="Password"]').fill('testPass');
 
-    
+        await page.locator('#company').fill('Test Co.');
+
+        
     });
 });
