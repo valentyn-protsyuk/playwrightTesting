@@ -10,6 +10,8 @@ it.describe('FORM DEMO TESTING', () => {
 
         await page.locator('#company').fill('Test Co.');
 
+        await page.selectOption('select[name="country"]', {label: 'United States'});
+
         
     });
 });
