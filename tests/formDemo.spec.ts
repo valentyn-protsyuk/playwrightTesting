@@ -14,5 +14,6 @@ it.describe('FORM DEMO TESTING', () => {
 
         await page.getByPlaceholder('Address 1').fill('LA');
         
+        await page.getByRole('textbox', {name:"Address 2"}).fill('My street');
     });
 });
