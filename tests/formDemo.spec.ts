@@ -5,5 +5,9 @@ it.describe('FORM DEMO TESTING', () => {
         await page.goto('https://www.lambdatest.com/selenium-playground/input-form-demo');
         await page.locator('#name').fill('testName');
         await page.locator('#inputEmail4').pressSequentially('testEmail@yahoo.com',{delay: 300});
+
+        await page.locator('input[placeholder="Password"]').fill('testPass');
+
+    
     });
 });
