@@ -23,8 +23,11 @@ export class DragDrop {
 
     
     //functions
-    public async dragAndDropElement(text:string){
+    public async dragAndDropElementV1(text:string){
         const dragTo = this.page.locator(this.dropZone)
         await this.page.locator(this.dragEl, {hasText: text}).dragTo(dragTo)
+        expect(await this.page.locator(this.dropList).textContent()).toContain(text)
+        await this.page.pause()
     }
+
 }
