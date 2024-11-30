@@ -30,4 +30,12 @@ export class DragDrop {
         await this.page.pause()
     }
 
+    
+    public async dragAndDropElementV2(text:string){
+        await this.page.locator(this.dragEl, {hasText: text}).hover();
+        await this.page.mouse.down()
+        await this.page.locator(this.dropZone).hover()
+        await this.page.mouse.up()
+        expect(await this.page.locator(this.dropList).textContent()).toContain(text)
+    }
 }

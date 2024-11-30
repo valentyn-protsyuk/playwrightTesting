@@ -6,7 +6,7 @@ it.describe('DRAG & DROP DEMO', () => {
         const dragDrop = new DragDrop(page);
         await page.goto('https://www.lambdatest.com/selenium-playground/drag-and-drop-demo')
         await dragDrop.dragAndDropElementV1('Draggable 1');
-        await dragDrop.dragAndDropElementV1('Draggable 2');
+        await dragDrop.dragAndDropElementV2('Draggable 2');
         //await page.reload() //refresh page
     });
 });
