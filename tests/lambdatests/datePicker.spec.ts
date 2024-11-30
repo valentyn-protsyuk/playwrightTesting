@@ -1,6 +1,5 @@
 import {test as it} from '@playwright/test';
 import { DatePicker } from '../../pages/lambdapages/DatePicker';
-import { beforeEach } from 'node:test';
 
 it.describe('DATE PICKER DEMO', () => {
     it('working with date picker', async ({page}) => {

@@ -21,4 +21,10 @@ export class DragDrop {
         return '#droppedlist';
     }
 
+    
+    //functions
+    public async dragAndDropElement(text:string){
+        const dragTo = this.page.locator(this.dropZone)
+        await this.page.locator(this.dragEl, {hasText: text}).dragTo(dragTo)
+    }
 }

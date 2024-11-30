@@ -1,6 +1,5 @@
 import {test as it} from '@playwright/test';
 import { DragDrop } from '../../pages/lambdapages/DragDrop';
-import { beforeEach } from 'node:test';
 
 it.describe('DRAG & DROP DEMO', () => {
     it('working with drag & drop', async ({page}) => {
