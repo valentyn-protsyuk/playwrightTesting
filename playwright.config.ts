@@ -1,5 +1,8 @@
 import { defineConfig, devices } from '@playwright/test';
 import dotenv from "dotenv";
+dotenv.config({
+  path: `./env/.env.${process.env.ENV}`
+})
 
 /**
  * Read environment variables from file.
@@ -35,9 +38,11 @@ export default defineConfig({
 
   /* Configure projects for major browsers */
   projects: [
+    {name: 'setup', testMatch: /.*\.setup\.ts/},
     {
       name: 'chromium',
-      use: { ...devices['Desktop Chrome'] },
+      use: { ...devices['Desktop Chrome'], headless: false, storageState: './.auth/user.json' },
+      dependencies: ['setup']
     },
 
     // {
