@@ -38,7 +38,7 @@ export class TodoPage{
     }
 
     
-    async removeAll(text:string):Promise<void>{
+    async removeAll():Promise<void>{
         while(await this.page.getByTestId(this.todoItem).count() > 0){
             await this.page.getByTestId(this.todoItem).first().hover()
             await this.page.getByTestId(this.todoItem).first().getByLabel("Delete").click()
