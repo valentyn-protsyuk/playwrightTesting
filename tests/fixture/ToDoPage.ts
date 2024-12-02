@@ -31,5 +31,9 @@ export class TodoPage{
         await this.page.keyboard.press('Enter')
     }
 
-   
+    async removeToDo(text:string):Promise<void>{
+        const todo = this.page.getByTestId(this.todoItem).filter({hasText: text})
+        await todo.hover()
+        await todo.getByLabel('Delete').click()
+    }
 }
