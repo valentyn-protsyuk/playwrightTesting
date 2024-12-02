@@ -22,5 +22,14 @@ export class TodoPage{
         await this.page.goto('https://demo.playwright.dev/todomvc')
     }
 
-    
+    /**
+     * 
+     * @param text any text for input field
+     */
+    async newToDo(text:string): Promise<void>{
+        await this.page.locator(this.input).fill(text);
+        await this.page.keyboard.press('Enter')
+    }
+
+   
 }
