@@ -10,5 +10,17 @@ export class TodoPage{
         this.page = page;
     }
 
+    get input(){
+        return 'input.new-todo'
+    }
+
+    get todoItem(){
+        return 'todo-item'
+    }
+
+    async goto(){
+        await this.page.goto('https://demo.playwright.dev/todomvc')
+    }
+
     
 }
