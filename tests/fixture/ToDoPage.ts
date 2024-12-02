@@ -36,4 +36,12 @@ export class TodoPage{
         await todo.hover()
         await todo.getByLabel('Delete').click()
     }
+
+    
+    async removeAll(text:string):Promise<void>{
+        while(await this.page.getByTestId(this.todoItem).count() > 0){
+            await this.page.getByTestId(this.todoItem).first().hover()
+            await this.page.getByTestId(this.todoItem).first().getByLabel("Delete").click()
+        }
+    }
 }
