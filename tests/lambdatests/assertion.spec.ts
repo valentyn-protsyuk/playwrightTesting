@@ -4,6 +4,10 @@ it.describe('ASSERTION', () => {
     it('Assertions', async ({page}) => {
         await page.goto('https://www.lambdatest.com/')
         const title = await page.title()
-        expect(title).toContain('LambdaTest')
+        expect.soft(title).toContain('LambdaTst') //soft assertions won't stop test execution when failed
+
+
+
+
     });
 });
