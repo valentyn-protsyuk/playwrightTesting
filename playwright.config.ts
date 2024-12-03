@@ -39,7 +39,7 @@ export default defineConfig({
   expect:{
     timeout: 7000
   },
-  testMatch: 'test.list.ts',
+  //testMatch: 'test.list.ts',
 
   /* Configure projects for major browsers */
   projects: [
