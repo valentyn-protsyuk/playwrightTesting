@@ -2,6 +2,7 @@ import {test as it, expect} from '@playwright/test'
 import exp from 'constants';
 
 it.describe('ASSERTION', () => {
+    it.use({viewport: {width: 500, height:500}})
     it('Assertions', async ({page}) => {
         await page.goto('https://www.lambdatest.com/')
         const title = await page.title()
