@@ -8,7 +8,7 @@ it.describe('IFRAMES', () => {
         const middleFrame = await frameBottom.frameLocator('[name="frame-middle"]').locator('body').textContent()
         const rightFrame = await frameBottom.frameLocator('[name="frame-right"]').locator('body').textContent()
         expect(leftFrame).toContain('Left')
-        expect(leftFrame).toContain('Middle')
-        expect(leftFrame).toContain('Right')
+        expect(middleFrame).toContain('Middle')
+        expect(rightFrame).toContain('Right')
     });
 });
