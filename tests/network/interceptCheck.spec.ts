@@ -9,7 +9,7 @@ it('Check for errors caused by Image intercept', async ({page})=>{
         }
     })
 
-    page.on('pageerror', (err) =>{
+    page.on('pageerror', err =>{
         console.log(`error: ${err}`);
     })
     
