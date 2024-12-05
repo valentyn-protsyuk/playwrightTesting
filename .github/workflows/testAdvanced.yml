@@ -37,7 +37,7 @@ jobs:
             - name: install dependencies
               run: npm ci --force
             - name: Install playwright
-              run: npx playwright install --with-dep
+              run: npx playwright install --with-deps
             #- name: wait for local host
             #  run: |
             #    npm run start
@@ -55,7 +55,7 @@ jobs:
             - name: install dependencies
               run: npm ci --force
             - name: Install playwright
-              run: npx playwright install --with-dep
+              run: npx playwright install --with-deps
             - name: Run tests
               run: npx playwright test lambdatests
              
