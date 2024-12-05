@@ -76,7 +76,13 @@ export class DatePicker {
         let year = await this.page.locator(this.dateOfTheYear).textContent()
         let month = await this.page.locator(this.dateOfTheMonth).locator('[selected="selected"]').textContent()
 
+        let myDate = this.randomDate;
+        if(myDate < 10){
+            myDate = '0' + this.randomDate;
+        }
+        
+
         await this.page.locator(this.dateFromComponent).getByRole('link',{name: this.randomDate}).click()
-        expect(await this.page.locator(this.fromInput).inputValue()).toBe(`${obj[month]}/${this.randomDate}/${year}`)
+        expect(await this.page.locator(this.fromInput).inputValue()).toBe(`${obj[month]}/${myDate}/${year}`)
     }
 }
