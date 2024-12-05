@@ -24,5 +24,17 @@ jobs:
                 npx allure generate ./allure-results --clean
             - name: Run Lambda tests
               run: npx playwright test lambdatests
+            - uses: actions/upload-artifact@v3
+              if: always()
+              with:
+                name: playwright report
+                path: playwright-report/
+                retention-days: 30
+            - uses: actions/upload-artifact@v3
+              if: always()
+              with:
+                name: playwright-allure
+                path: allure-report/
+                retention-days: 30
 
 
