@@ -61,4 +61,15 @@ it.describe('WORK WITH API', () => {
         expect(respBody.email).toBe('testPut@gmail.com')
     });
 
+    
+    it('DELETE test', async ({request}) => {
+        const resp = await request.delete(`${url}api/users/2`)
+        
+        console.log(resp, 'RESPONSE')
+        expect(resp.status()).toBe(204)
+        const respBody = await resp.text()
+        console.log(respBody, 'Body')
+        expect(respBody).toBe('')
+    });
+
 });
