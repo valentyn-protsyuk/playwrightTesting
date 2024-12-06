@@ -21,8 +21,8 @@ on:
         paths-ignore:
             - '**.yml'
             - '**.json'
-    schedule:
-        - cron: '0 0 * * *'
+    #schedule:
+        #- cron: '0 0 * * *'
 
 jobs:
     start_project:
