@@ -45,5 +45,20 @@ it.describe('WORK WITH API', () => {
         expect(respBody.id).toBe(4)
     });
 
-    
+    it('PUT registration test', async ({request}) => {
+        //data structure has to match server's structure otherwise can accidentally lose info (PUT replaces server's data with our data)
+        const resp = await request.put(`${url}api/users/2`,{
+            data: {
+                email: 'testPut@gmail.com',
+                password: 'testPass123#'
+            }
+        })
+        
+        console.log(resp, 'RESPONSE')
+        expect(resp.status()).toBe(200)
+        const respBody = JSON.parse(await resp.text())
+        console.log(respBody, 'Body')
+        expect(respBody.email).toBe('testPut@gmail.com')
+    });
+
 });
