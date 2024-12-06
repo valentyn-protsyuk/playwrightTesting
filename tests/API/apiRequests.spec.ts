@@ -72,4 +72,19 @@ it.describe('WORK WITH API', () => {
         expect(respBody).toBe('')
     });
 
+    
+    //TODO: website has PATCH bug PATCH works like PUT and replaces server's data with our payload
+    it.only('PATCH user test', async ({request}) => {
+        const resp = await request.patch(`${url}api/api/users/2`,{
+            data: {
+                name: 'patchName'
+            }
+        })
+        
+        console.log(resp, 'RESPONSE')
+        expect(resp.status()).toBe(200)
+        const respBody = JSON.parse(await resp.text())
+        console.log(respBody, 'Body')
+        expect(respBody.name).toBe('patchName')
+    });
 });
