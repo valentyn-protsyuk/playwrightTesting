@@ -15,4 +15,18 @@ it.describe('WORK WITH API', () => {
         expect(respBody.data.email).toBe('janet.weaver@reqres.in')
     });
 
+    
+    
+    it.skip('POST create user test', async ({request}) => {
+        const resp = await request.post(`${url}api/user`,{
+            data: {
+                id: 300
+            }
+        })
+        
+        console.log(resp, 'RESPONSE')
+        const respBody = await resp.text()
+        console.log(respBody, 'Body')
+    });
+
 });
