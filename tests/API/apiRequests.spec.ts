@@ -29,4 +29,21 @@ it.describe('WORK WITH API', () => {
         console.log(respBody, 'Body')
     });
 
+    
+    it('POST registration test', async ({request}) => {
+        const resp = await request.post(`${url}api/register`,{
+            data: {
+                email: 'eve.holt@reqres.in',
+                password: 'pistol'
+            }
+        })
+        
+        console.log(resp, 'RESPONSE')
+        expect(resp.status()).toBe(200)
+        const respBody = JSON.parse(await resp.text())
+        console.log(respBody, 'Body')
+        expect(respBody.id).toBe(4)
+    });
+
+    
 });
